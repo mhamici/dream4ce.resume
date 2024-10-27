@@ -4,125 +4,635 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/dream4ce.resume/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
     <script type="module" crossorigin src="/dream4ce.resume/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/dream4ce.resume/assets/styles-DvPDDfy5.css">
+    <link rel="modulepreload" crossorigin href="/dream4ce.resume/assets/vendor-DFi10nYr.js">
+    <link rel="stylesheet" crossorigin href="/dream4ce.resume/assets/vendor-DnveWo0P.css">
+    <link rel="stylesheet" crossorigin href="/dream4ce.resume/assets/index-BdR22MPw.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header-container">
+    <a class="page-logo" href="./index.html"
+      >LLOYD<span class="logo-color">JEFFERSON.</span></a
+    >
+
+    <input
+      type="checkbox"
+      class="header-theme-checkbox theme-checkbox"
+      id="change-theme"
+    />
+    <label for="change-theme" class="visually-hidden">Change theme</label>
+
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/dream4ce.resume/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
+          <a class="nav-link" href="#aboutme">About me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+          <a class="nav-link" href="#my-projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#work">Contacts</a>
         </li>
       </ul>
+      <button class="mob-open-btn" type="button" id="menu-open-btn">
+        <span class="visually-hidden">Open menu</span>
+        <svg class="mob-open-btn-icon" width="32" height="32">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-menu"></use>
+        </svg>
+      </button>
     </nav>
   </div>
-</header>
 
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
-  <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
+  <div class="mob-menu" data-menu>
+    <nav class="mob-menu-nav">
+      <a class="page-logo" href="./index.html"
+        >LLOYD<span class="logo-color">JEFFERSON.</span></a
       >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/dream4ce.resume/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
-    </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
-  </div>
-</section>
+      <button class="mob-menu-close-btn" data-menu-button-close>
+        <span class="visually-hidden">Close menu</span>
+        <svg class="mob-menu-close-btn-icon" width="32" height="32">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-close"></use>
+        </svg>
+      </button>
+    </nav>
 
-      <article class="badges">
-  <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
+    <ul class="mob-nav-list">
+      <li class="mob-nav-item">
+        <a class="mob-nav-link" href="#aboutme">About me</a>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
+      <li class="mob-nav-item">
+        <a class="mob-nav-link" href="#my-projects">Projects</a>
       </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
+      <li class="mob-nav-item">
+        <a class="mob-nav-link" href="#work">Contacts</a>
       </li>
     </ul>
   </div>
-</article>
+</header>
+
+    <main>
+      <section class="hero-section section">
+  <div class="container hero-container">
+    <div class="hero-bg-wrapper">
+      <h1 class="title-names-one">Hello, I am</h1>
+      <img
+        class="img-hero-people"
+        src="data:image/avif;base64,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"
+        srcset="data:image/avif;base64,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 1x, data:image/avif;base64,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 2x"
+        alt="me"
+      />
+
+      <h2 class="title-names-two">Fullstack developer</h2>
+
+      <div class="hero-column">
+        <a href="#work" class="hero-button-link">
+          <svg class="img-title" width="30" height="16">
+            <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-arrow"></use>
+          </svg>
+          <p class="hero-button">Order the Project</p>
+        </a>
+        <div class="text-hero-container">
+          <h3 class="text-hero">
+            I work with people all over the world to create
+            <span class="span-color">impressive</span> and
+            <span class="span-color">functional websites</span> that reflect
+            each client’s unique personality.
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-color">
+    <ul class="inline-list">
+      <li class="li-fone">
+        <a href="https://www.instagram.com/goitclub/" target="_blank"
+          >Instagram</a
+        >
+      </li>
+      <li class="li-fone">
+        <a href="https://www.facebook.com/goITclub/" target="_blank"
+          >Facebook</a
+        >
+      </li>
+      <li class="li-fone">
+        <a href="https://www.linkedin.com/school/goit-start-your-career-in-it"
+          >linkedIn</a
+        >
+      </li>
+      <li class="li-fone">
+        <a
+          href="https://github.com/alex-usenko325/project-Dream4ce"
+          target="_blank"
+          >Github</a
+        >
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section class="about-me section" id="aboutme">
+  <div class="container">
+    <h2 class="about-me-title">about <span class="about-me-item">me</span></h2>
+    <div class="about-me-container">
+      <div class="about-me-images-container">
+        <picture>
+          <source
+            srcset="/dream4ce.resume/assets/about-me-portret-desc1-BxfJEezg.avif, /dream4ce.resume/assets/about-me-portret-desc2-BPKACwwr.avif 2x"
+            media="(min-width: 1280px)"
+            width="384"
+            height="448"
+          />
+          <source
+            class="yacht-photo"
+            srcset="/dream4ce.resume/assets/about-me-portret-tablet1-DcWSE52r.avif, /dream4ce.resume/assets/about-me-portret-tablet2-CKxay3R-.avif 2x"
+            media="(min-width: 768px)"
+            width="336"
+            height="392"
+          />
+          <source
+            class="yacht-photo"
+            srcset="/dream4ce.resume/assets/about-me-portret-mobile1-rktELCA0.avif, /dream4ce.resume/assets/about-me-portret-mobile2-i0IlDyrM.avif 2x"
+            media="(max-width: 768px)"
+            width="320"
+            height="374"
+          />
+
+          <img
+            class="yacht-photo"
+            src="/dream4ce.resume/assets/about-me-portret-desc1-BxfJEezg.avif"
+            alt="view of the yacht inside"
+          />
+        </picture>
+      </div>
+
+      <span class="about-me-bg"></span>
+      <div class="about-me-education-container">
+        <h3 class="about-me-subtitle">education</h3>
+        <ul class="about-me-education-list">
+          <li class="about-me-education-list-item">
+            2018 - 2019 / Frontend Development Diploma, GoIT IT School, New York
+          </li>
+          <li class="about-me-education-list-item">
+            2019 - 2020 / Advanced Web Development Certificate, GoIT IT School,
+            New York
+          </li>
+          <li class="about-me-education-list-item">
+            2020 - 2022 / Advanced Blender Animation Techniques, Udemy
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-me-bio-container">
+        <h3 class="about-me-subtitle">bio</h3>
+        <p class="about-me-p about-me-first-p">
+          I'm Lloyd Jefferson, a talented programmer specializing in software
+          development. My expertise spans various programming languages and
+          technologies, and I am dedicated to continually enhancing my skills. I
+          thrive on seeking unconventional and creative solutions to problems,
+          leveraging a high level of analytical skills to effectively tackle
+          even the most challenging tasks.
+        </p>
+        <p class="about-me-p">
+          Adaptable to both independent and team-oriented work, I collaborate
+          seamlessly with colleagues, exchanging ideas and finding optimal
+          solutions. My professional maturity enables me to navigate challenges
+          and stressful situations with a calm demeanor, maintaining a
+          consistently high quality of work. Committed to self-improvement, I
+          actively engage in studying new technologies and practices to stay
+          current with the latest innovations in the field.
+        </p>
+      </div>
+
+      <div class="about-me-role-container">
+        <h3 class="about-me-subtitle">role</h3>
+        <ul class="about-me-role-list">
+          <li class="about-me-role-list-item">Frontend development</li>
+          <li class="about-me-role-list-item">HeadlessCMS, Wordpress</li>
+          <li class="about-me-role-list-item">Blender (enjoy)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="tech-skills section">
+  <h1 class="visually-hidden">Tech Skills</h1>
+
+  <div class="marquee">
+    <div class="marquee__inner">
+      <ul class="marquee__line">
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>React Native</li>
+        <li>TypeScript</li>
+      </ul>
+
+      <ul class="marquee__line">
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>React Native</li>
+        <li>TypeScript</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="marquee-2">
+    <div class="marquee__inner-2">
+      <ul class="marquee__line-2">
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>React Native</li>
+        <li>TypeScript</li>
+      </ul>
+
+      <ul class="marquee__line-2">
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>React Native</li>
+        <li>TypeScript</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section id="my-projects" class="section my-projects">
+  <div class="container">
+    <h2 class="projects-title">my <span class="ighlight">projects</span></h2>
+    <ul class="project-list"></ul>
+    <div class="centered-button">
+      <button class="load-more" type="button">LOAD MORE</button>
+    </div>
+  </div>
+</section>
+
+      <section class="benefits section">
+  <div class="container benefits-container">
+    <h2 class="benefits-title"><span>Benefits</span> of working with me</h2>
+
+    <ul class="benefits-list">
+      <li class="bung"></li>
+      <li class="bung"></li>
+      <li class="benefits-list-item">
+        <svg class="benefits-list-item-icon" width="48" height="48">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-expertise"></use>
+        </svg>
+        <h3 class="benefits-list-item-title">Expertise</h3>
+        <p class="benefits-list-item-text">
+          With extensive experience in development, I have a deep understanding
+          of programming and website development.
+        </p>
+      </li>
+
+      <li class="benefits-list-item">
+        <svg class="benefits-list-item-icon" width="48" height="48">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-communication"></use>
+        </svg>
+        <h3 class="benefits-list-item-title">Communication</h3>
+        <p class="benefits-list-item-text">
+          Understanding your needs and wants is my priority and I am always
+          available for discussions and open to corrections.
+        </p>
+      </li>
+
+      <li class="benefits-list-item">
+        <span class="benefits-bg"></span>
+        <svg class="benefits-list-item-icon" width="48" height="48">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-art"></use>
+        </svg>
+        <h3 class="benefits-list-item-title">Art</h3>
+        <p class="benefits-list-item-text">
+          Thanks to my creative nature, I am ready to accept challenges and help
+          you bring your ideas to life.
+        </p>
+      </li>
+
+      <li class="benefits-list-item">
+        <svg class="benefits-list-item-icon" width="48" height="48">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-urgent-execution"></use>
+        </svg>
+        <h3 class="benefits-list-item-title">Urgent execution</h3>
+        <p class="benefits-list-item-text">
+          I understand how important time is to you. Ready to work quickly and
+          efficiently, without reducing the quality of work.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section id="faq" class="section faq">
+  <div class="container faq-container">
+    <div class="faq-title hidden-element">
+      <h2 class="faq-title-content">
+        frequently asked <span class="faq-title-span-green">question</span>
+      </h2>
+      <div class="background-img-container"></div>
+    </div>
+    <div class="faq-content">
+      <ul class="accordion-list faq-content-list">
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                What programming languages ​​are most often used in your
+                project?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon faq-is-active" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel">
+            <p class="ac-text faq-content-item-description">
+              In the field of web development, there are various technologies
+              and programming languages. Typically, this includes a combination
+              of frontend (client side) and backend (server side) languages.
+            </p>
+          </div>
+        </li>
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                What are the deadlines for the project?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel hidden">
+            <p class="ac-text faq-content-item-description">
+              The terms of project implementation depend to a large extent on a
+              number of factors, such as the scope of the project, its
+              complexity, and the availability of resources. Determining exact
+              deadlines is a difficult task, and it usually occurs during the
+              planning phase of the project.
+            </p>
+          </div>
+        </li>
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                What payment methods do you accept?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel hidden">
+            <p class="ac-text faq-content-item-description">
+              Payment through credit and debit cards such as Visa, MasterCard,
+              specialized electronic payment systems such as PayPal, as well as
+              payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+            </p>
+          </div>
+        </li>
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                How can I contact you?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel hidden">
+            <p class="ac-text faq-content-item-description">
+              In the field of web development, there are various technologies
+              and programming languages. Typically, this includes a combination
+              of frontend (client side) and backend (server side) languages.
+            </p>
+          </div>
+        </li>
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                Do you provide advice or support?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel hidden">
+            <p class="ac-text faq-content-item-description">
+              The terms of project implementation depend to a large extent on a
+              number of factors, such as the scope of the project, its
+              complexity, and the availability of resources. Determining exact
+              deadlines is a difficult task, and it usually occurs during the
+              planning phase of the project.
+            </p>
+          </div>
+        </li>
+        <li class="ac faq-content-item hidden-element">
+          <div class="ac-faq-title">
+            <div class="ac-trigger faq-acordeon-wrap" aria-label="show more">
+              <h3 class="ac-header faq-content-item-title">
+                What does the process of developing a software product look like
+                from idea to implementation?
+              </h3>
+              <div class="faq-item-icon-wrap">
+                <svg class="faq-item-icon" width="32" height="32">
+                  <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ac-panel hidden">
+            <p class="ac-text faq-content-item-description">
+              Payment through credit and debit cards such as Visa, MasterCard,
+              specialized electronic payment systems such as PayPal, as well as
+              payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section class="reviews section">
+  <div class="container">
+    <h1 class="title-reviews">reviews</h1>
+    <div class="swiper-container">
+      <ul class="menu-reviews swiper-wrapper"></ul>
+      <div class="container-icon">
+        <svg class="icon-arrow-left" width="24" height="24">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-arrow-narrow"></use>
+        </svg>
+        <svg class="icon-arrow-rigth" width="24" height="24">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-arrow-narrow"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="work" class="section">
+  <div class="container work-wrapper">
+    <div class="work-left">
+      <h2 class="work-title">
+        <span class="work-black">let's</span> work together
+      </h2>
+      <span class="work-bg"></span>
+      <p class="work-text">
+        contact me to transform your ideas into exceptional solutions.
+      </p>
+      <ul class="work-list">
+        <li class="work-item">
+          <svg class="work-icon" width="24" height="24">
+            <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-phone"></use>
+          </svg>
+          <a class="work-link" href="tel:+380904567890">+38 090 456 78 90</a>
+        </li>
+        <li class="work-item">
+          <svg class="work-icon" width="24" height="24">
+            <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-mail"></use>
+          </svg>
+          <a class="work-link" href="mailto:lloydjefferson@gmail.com"
+            >lloydjefferson@gmail.com</a
+          >
+        </li>
+        <li class="work-item">
+          <svg class="work-icon" width="24" height="24">
+            <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-map"></use>
+          </svg>
+          <a class="work-link" href="https://www.google.com/maps?q=New+York,+USA" target="_blank">USA, New York</a>
+        </li>
+      </ul>
+    </div>
+    <div class="work-right">
+      <form class="work-form" novalidate>
+        <input
+          class="work-input"
+          type="email"
+          name="email"
+          placeholder="Your email*"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          id="email"
+          required
+        />
+        <label for="email" class="visually-hidden">Email</label>
+        <svg class="work-success-icon" width="16" height="16">
+          <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-ack"></use>
+        </svg>
+        <p class="error-input js-error">Invalid email, try again</p>
+        <textarea
+          class="work-message"
+          placeholder="Message"
+          name="message"
+          id="message"
+        ></textarea>
+        <label for="message" class="visually-hidden">Message</label>
+        <p class="error-input-msg js-error">All fields must be filled</p>
+        <button type="submit" class="work-btn">send message</button>
+      </form>
+      <span class="work-loader visually-hidden"></span>
+    </div>
+
+    <div class="work-backdrop visually-hidden">
+      <div class="work-modal">
+        <button class="work-modal-close">
+          <svg class="work-icon-close" width="24" height="24">
+            <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-close"></use>
+          </svg>
+        </button>
+        <h3 class="work-modal-title">
+          thank you for your interest in cooperation!
+        </h3>
+        <p class="work-modal-text">
+          The manager will contact you shortly to discuss further details and
+          opportunities for cooperation. Please stay in touch.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     </main>
-
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="container footer-container">
+    <div class="footer-content">
+      <a class="footer-logo-link" href="">
+        <p>Lloyd<span class="footer-logo-span">Jefferson.</span></p>
       </a>
+      <ul class="footer-list footer-font">
+        <li class="footer-list-item">
+          <a
+            class="footer-list-link"
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            >Instagram</a
+          >
+        </li>
+        <li class="footer-list-item">
+          <a
+            class="footer-list-link"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            >Facebook</a
+          >
+        </li>
+        <li class="footer-list-item">
+          <a
+            class="footer-list-link"
+            href="https://www.linkedin.com/school/goit-start-your-career-in-it"
+            target="_blank"
+            >Linkedin</a
+          >
+        </li>
+        <li class="footer-list-item">
+          <a
+            class="footer-list-link"
+            href="https://github.com/Kate-Iva/portfolio-project-14"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </div>
+    <p class="copyright footer-font">
+      <span>© Copyright 2024.</span>
+      <span class="space-copyright">Made by LloydJefferson</span>
     </p>
   </div>
 </footer>
-
+<button type="button" class="scroll-btn">
+  <svg class="scroll-btn-icon">
+    <use href="/dream4ce.resume/assets/icons-D82s-bJO.svg#icon-button-down"></use>
+  </svg>
+</button>
 
   </body>
 </html>
