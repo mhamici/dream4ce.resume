@@ -17,6 +17,12 @@
   "author": "Maryna Hamici <mary_solnechko@yahoo.com>",
   "license": "ISC",
   "dependencies": {
+    "accordion-js": "^3.3.4",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "izitoast": "^1.4.0",
+    "scrollreveal": "^4.0.9",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }

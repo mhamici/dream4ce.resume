@@ -9,7 +9,7 @@
 }
 
 .benefits-title span {
-  color: #00b068;
+  color: var(--accent-green);
 }
 
 .benefits-list {
@@ -29,9 +29,10 @@
 
 .benefits-list-item-icon {
   border-radius: 8px;
-  stroke: #00b068;
+  stroke: var(--accent-green);
   fill: transparent;
-  background: #bcdfd1;
+  background-color: var(--light-accent);
+  padding: 12px;
 }
 
 .benefits-list-item-title {
@@ -44,6 +45,10 @@
 .benefits-list-item-text {
   font-weight: 300;
   font-size: 16px;
+}
+
+.benefits-bg {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -70,12 +75,17 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .benefits-container {
+    max-height: 678px;
+  }
   .benefits-title {
     width: 690px;
   }
 
   .benefits-list {
     max-width: 1280px;
+    position: relative;
+    top: -100px;
   }
 
   .bung:first-of-type {
@@ -89,5 +99,18 @@
   }
   .benefits-list-item {
     width: 384px;
+  }
+  .benefits-bg {
+    display: block;
+    position: absolute;
+    background-image: -webkit-image-set(
+      url(../img/background/decor-bg3.avif) 1x,
+      url(../img/background/decor-bg3-2x.avif) 2x
+    );
+    top: -505px;
+    right: 20px;
+    width: 550px;
+    height: 420px;
+    background-repeat: no-repeat;
   }
 }

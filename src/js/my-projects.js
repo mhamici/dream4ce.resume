@@ -1,32 +1,32 @@
-import managerFinanceImg from '/img/my-projects/maneger-finance.png';
-import managerFinanceImg2x from '/img/my-projects/maneger-finance-2x.png';
+import managerFinanceImg from '/img/my-projects/maneger-finance.avif';
+import managerFinanceImg2x from '/img/my-projects/maneger-finance-2x.avif';
 
-import vegetablesImg from '/img/my-projects/vegetables.png';
-import vegetablesImg2x from '/img/my-projects/vegetables-2x.png';
+import vegetablesImg from '/img/my-projects/vegetables.avif';
+import vegetablesImg2x from '/img/my-projects/vegetables-2x.avif';
 
-import discoverImg from '/img/my-projects/discover.png';
-import discoverImg2x from '/img/my-projects/discover-2x.png';
+import discoverImg from '/img/my-projects/discover.avif';
+import discoverImg2x from '/img/my-projects/discover-2x.avif';
 
-import transformYourImg from '/img/my-projects/transform-your.png';
-import transformYourImg2x from '/img/my-projects/transform-your-2x.png';
+import transformYourImg from '/img/my-projects/transform-your.avif';
+import transformYourImg2x from '/img/my-projects/transform-your-2x.avif';
 
-import traditionsUkraineImg from '/img/my-projects/traditions-ukarain.png';
-import traditionsUkraineImg2x from '/img/my-projects/traditions-ukarain-2x.png';
+import traditionsUkraineImg from '/img/my-projects/traditions-ukarain.avif';
+import traditionsUkraineImg2x from '/img/my-projects/traditions-ukarain-2x.avif';
 
-import getBodyImg from '/img/my-projects/get-body.png';
-import getBodyImg2x from '/img/my-projects/get-body-2x.png';
+import getBodyImg from '/img/my-projects/get-body.avif';
+import getBodyImg2x from '/img/my-projects/get-body-2x.avif';
 
-import miminoImg from '/img/my-projects/mimino.png';
-import miminoImg2x from '/img/my-projects/mimino-2x.png';
+import miminoImg from '/img/my-projects/mimino.avif';
+import miminoImg2x from '/img/my-projects/mimino-2x.avif';
 
-import brandImg from '/img/my-projects/brand.png';
-import brandImg2x from '/img/my-projects/brand-2x.png';
+import brandImg from '/img/my-projects/brand.avif';
+import brandImg2x from '/img/my-projects/brand-2x.avif';
 
-import freshImg from '/img/my-projects/fresh.png';
-import freshImg2x from '/img/my-projects/fresh-2x.png';
+import freshImg from '/img/my-projects/fresh.avif';
+import freshImg2x from '/img/my-projects/fresh-2x.avif';
 
-import turnYourImg from '/img/my-projects/turn-your.png';
-import turnYourImg2x from '/img/my-projects/turn-your-2x.png';
+import turnYourImg from '/img/my-projects/turn-your.avif';
+import turnYourImg2x from '/img/my-projects/turn-your-2x.avif';
 
 import urlSprite from '/img/icons.svg';
 
@@ -115,7 +115,6 @@ const projects = [
 
 let currentIndex = 0;
 const projectsPerPage = 3;
-let observer;
 
 function loadProjects() {
   const projectListEl = document.querySelector('.project-list');
@@ -126,10 +125,8 @@ function loadProjects() {
 
   const projectsItems = projectsToLoad
     .map(({ image, image2x, alt, techStack, title, link, svg }, index) => {
-      const directionClass =
-        (currentIndex + index) % 2 === 0 ? 'left' : 'right';
       return `
-            <li class="project-item ${directionClass}">
+            <li class="project-item">
                 <img  srcset="${image} 1x, ${image2x} 2x" src="${image}"  alt="${alt}" class="project-image">
                 <div class="project-content">
                     <p class="project-tech">${techStack}</p>
@@ -152,14 +149,13 @@ function loadProjects() {
 
   projectListEl.innerHTML += projectsItems;
 
-  const newProjectItems = document.querySelectorAll(
-    '.project-item:not(.observed)'
-  );
-  newProjectItems.forEach(item => {
-    observer.observe(item);
-    item.classList.add('observed');
+  const newlyAddedItems = document.querySelectorAll('.project-item:not(.show)');
+  newlyAddedItems.forEach((item, i) => {
+    setTimeout(() => {
+      item.classList.add('show');
+    }, i * 200);  
   });
-
+  
   currentIndex += projectsPerPage;
 
   if (currentIndex >= projects.length) {
@@ -168,13 +164,4 @@ function loadProjects() {
 }
 
 document.querySelector('.load-more').addEventListener('click', loadProjects);
-
-observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-});
 loadProjects();
